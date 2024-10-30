@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -13,20 +14,22 @@ body{
 #calculator{
     font-family: sans-serif;
     background-color: rgb(15, 15, 15);
-    color: white;
+    color: rgb(245, 245, 245);
     border-radius: 15px;
     max-width: 500px;
     overflow: hidden;
+    box-shadow: 0 0 20px rgba(15, 15, 15, 3);
 }
 
 #display{
-    height: 70px;;
+    height: 150px;;
     width: 100%;
     padding: 20px;
-    font: 4rem;
-    text-align: left;
+    font-size: 3rem;
+    text-align: right;
     border: none;
     background-color: rgb(44, 44, 44);
+    color: white;
 
 }
 
@@ -80,3 +83,4 @@ button:active{
 .operator-special:active{
     background-color: hsl(225, 3%, 50%);
 }
+
