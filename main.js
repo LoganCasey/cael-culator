@@ -20,57 +20,136 @@ const point = document.getElementById("point")
 const allClear = document.getElementById("all-clear")
 const display = document.getElementById("display")
 
-let firstNumber = ""
-let secondNumber = ""
+let currentNumberString = ""
+let secondNumberString = ""
+let savedNumber = 0
 let currentOperation = ""
+let expectingNewNumber = false
+
+function appendDigit(digit){
+    if (expectingNewNumber){
+        currentNumberString = ""
+        expectingNewNumber = false
+    }
+    currentNumberString += digit
+    updateDisplay()
+}
+
+function updateDisplay(){
+    display.value = currentNumberString
+}
+
 
 one.addEventListener("click", () => {
-    display.value += "1"
+    appendDigit("1")
 })
 two.addEventListener("click", () => {
-    display.value += "2"
+    appendDigit("2")
 })
 three.addEventListener("click", () => {
-    display.value += "3"
+    appendDigit("3")
 })
 four.addEventListener("click", () => {
-    display.value += "4"
+    appendDigit("4")
 })
 five.addEventListener("click", () => {
-    display.value += "5"
+    appendDigit("5")
 })
 six.addEventListener("click", () => {
-    display.value += "6"
+    appendDigit("6")
 })
 seven.addEventListener("click", () => {
-    display.value += "7"
+    appendDigit("7")
 })
 eight.addEventListener("click", () => {
-    display.value += "8"
+    appendDigit("8")
 })
 nine.addEventListener("click", () => {
-    display.value += "9"
+    appendDigit("9")
 })
 zero.addEventListener("click", () => {
-    display.value += "0"
+    appendDigit("0")
 })
 plus.addEventListener("click", () => {
-    display.value += "+"
+    currentOperation = "+"
+    expectingNewNumber = true
+    //save number
+    savedNumber = Number.parseFloat(currentNumberString)
 })
 minus.addEventListener("click", () => {
-    display.value += "-"
+    appendDigit("-")
 })
 times.addEventListener("click", () => {
-    display.value += "×"
+    appendDigit("×")
 })
 divide.addEventListener("click", () => {
-    display.value += "÷"
+    appendDigit("÷")
+})
+point.addEventListener("click", () => {
+    appendDigit(".")
 })
 
+squared.addEventListener("click", () => {
+
+    //convert to sting
+    const number = Number.parseFloat(currentNumberString)
+
+    // do the math
+    const result  = number * number
+
+    //updade display
+    currentNumberString = result.toString()
+    updateDisplay()
+})
+
+root.addEventListener("click", () => {
+
+    //convert to sting
+    const number = Number.parseFloat(currentNumberString)
+
+    // do the math
+    const result  = Math.sqrt(number)
+
+    //updade display
+    currentNumberString = result.toString()
+    updateDisplay()
+})
+
+negate.addEventListener("click", () => {
+
+    //convert to sting
+    const number = Number.parseFloat(currentNumberString)
+
+    // do the math
+    const result  = number * -1
+
+    //updade display
+    currentNumberString = result.toString()
+    updateDisplay()
+})
+
+equals.addEventListener("click", () => {
+    //convert to string
+    const number = Number.parseFloat(currentNumberString)
+    let result
+
+    //do the math
+    if(currentOperation==="+"){
+        result = savedNumber + number
+    }
+
+    //updade display
+    currentNumberString = result.toString()
+    updateDisplay()
+})
 
 
 allClear.addEventListener("click", () => {
-    display.value = ""
+    currentOperation = ""
+    savedNumber = 0
+    expectingNewNumber = false
+    currentNumberString = ""
+    updateDisplay()
 })
 
 
