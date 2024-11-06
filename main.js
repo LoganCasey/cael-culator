@@ -77,13 +77,22 @@ plus.addEventListener("click", () => {
     savedNumber = Number.parseFloat(currentNumberString)
 })
 minus.addEventListener("click", () => {
-    appendDigit("-")
+    currentOperation = "-"
+    expectingNewNumber = true
+    //save number
+    savedNumber = Number.parseFloat(currentNumberString)
 })
 times.addEventListener("click", () => {
-    appendDigit("×")
+    currentOperation = "×"
+    expectingNewNumber = true
+    //save number
+    savedNumber = Number.parseFloat(currentNumberString)
 })
 divide.addEventListener("click", () => {
-    appendDigit("÷")
+    currentOperation = "÷"
+    expectingNewNumber = true
+    //save number
+    savedNumber = Number.parseFloat(currentNumberString)
 })
 point.addEventListener("click", () => {
     appendDigit(".")
@@ -136,6 +145,15 @@ equals.addEventListener("click", () => {
     //do the math
     if(currentOperation==="+"){
         result = savedNumber + number
+    }
+    if(currentOperation==="-"){
+        result = savedNumber - number
+    }
+    if(currentOperation==="×"){
+        result = savedNumber * number
+    }
+    if(currentOperation==="÷"){
+        result = savedNumber / number
     }
 
     //updade display
