@@ -39,8 +39,14 @@ function updateDisplay(){
 
 
 //sound
-const sound = new Audio("nochance.mp3")
-const soundFiles = [sound, sound, sound]
+const sound1 = new Audio("nochance1.mp3")
+const sound2 = new Audio("cantletyoudothat1.mp3")
+const sound3 = new Audio("nahbro1.mp3")
+const sound4 = new Audio("nicetry1.mp3")
+const sound5 = new Audio("nocando1.mp3")
+const sound6 = new Audio("sorrybud1.mp3")
+const sound7 = new Audio("uhuh1.mp3")
+const soundFiles = [sound1, sound2, sound3, sound4, sound5, sound6, sound7]
 
 function playRandomSound(){
     const randomIndex = Math.floor(Math.random()*soundFiles.length)
