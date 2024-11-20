@@ -57,95 +57,95 @@ function playRandomSound(){
 
 one.addEventListener("click", () => {
     appendDigit("1")
-    if(Math.random <= digitSoundProbability){
+    if(Math.random() <= digitSoundProbability){
         playRandomSound()
     }
 })
 two.addEventListener("click", () => {
     appendDigit("2")
-    if(Math.random <= digitSoundProbability){
+    if(Math.random() <= digitSoundProbability){
         playRandomSound()
     }
 })
 three.addEventListener("click", () => {
     appendDigit("3")
-    if(Math.random <= digitSoundProbability){
+    if(Math.random() <= digitSoundProbability){
         playRandomSound()
     }
 })
 four.addEventListener("click", () => {
     appendDigit("4")
-    if(Math.random <= digitSoundProbability){
+    if(Math.random() <= digitSoundProbability){
         playRandomSound()
     }
 })
 five.addEventListener("click", () => {
     appendDigit("5")
-    if(Math.random <= digitSoundProbability){
+    if(Math.random() <= digitSoundProbability){
         playRandomSound()
     }
 })
 six.addEventListener("click", () => {
     appendDigit("6")
-    if(Math.random <= digitSoundProbability){
+    if(Math.random() <= digitSoundProbability){
         playRandomSound()
     }
 })
 seven.addEventListener("click", () => {
     appendDigit("7")
-    if(Math.random <= digitSoundProbability){
+    if(Math.random() <= digitSoundProbability){
         playRandomSound()
     }
 })
 eight.addEventListener("click", () => {
     appendDigit("8")
-    if(Math.random <= digitSoundProbability){
+    if(Math.random() <= digitSoundProbability){
         playRandomSound()
     }
 })
 nine.addEventListener("click", () => {
     appendDigit("9")
-    if(Math.random <= digitSoundProbability){
+    if(Math.random() <= digitSoundProbability){
         playRandomSound()
     }
 })
 zero.addEventListener("click", () => {
     appendDigit("0")
-    if(Math.random <= digitSoundProbability){
+    if(Math.random() <= digitSoundProbability){
         playRandomSound()
     }
 })
 plus.addEventListener("click", () => {
     currentExpretionCode += "+"
     currentExpretionDisplay += " + "
-    if(Math.random <= operatorSoundProbability){
+    if(Math.random() <= operatorSoundProbability){
         playRandomSound()
     }
 })
 minus.addEventListener("click", () => {
     currentExpretionCode += "-"
     currentExpretionDisplay += " - "
-    if(Math.random <= operatorSoundProbability){
+    if(Math.random() <= operatorSoundProbability){
         playRandomSound()
     }
 })
 times.addEventListener("click", () => {
     currentExpretionCode += "*"
     currentExpretionDisplay += " × "
-    if(Math.random <= operatorSoundProbability){
+    if(Math.random() <= operatorSoundProbability){
         playRandomSound()
     }
 })
 divide.addEventListener("click", () => {
     currentExpretionCode += "/"
     currentExpretionDisplay += " ÷ "
-    if(Math.random <= operatorSoundProbability){
+    if(Math.random() <= operatorSoundProbability){
         playRandomSound()
     }
 })
 point.addEventListener("click", () => {
     appendDigit(".")
-    if(Math.random <= specialSoundProbability){
+    if(Math.random() <= specialSoundProbability){
         playRandomSound()
     }
 })
@@ -161,7 +161,7 @@ squared.addEventListener("click", () => {
     console.log(currentExpretionCode)
     updateDisplay()
 
-    if(Math.random <= operatorSoundProbability){
+    if(Math.random() <= operatorSoundProbability){
         playRandomSound()
     }
 })
@@ -180,7 +180,7 @@ root.addEventListener("click", () => {
     currentExpretionDisplay += `√ ${lastNumber}`
     updateDisplay()
 
-    if(Math.random <= operatorSoundProbability){
+    if(Math.random() <= operatorSoundProbability){
         playRandomSound()
     }
 })
@@ -191,7 +191,7 @@ negate.addEventListener("click", () => {
     currentExpretionCode += "-"
     updateDisplay()
 
-    if(Math.random <= specialSoundProbabilitySoundProbability){
+    if(Math.random() <= specialSoundProbabilitySoundProbability){
         playRandomSound()
     }
 })
@@ -204,7 +204,7 @@ equals.addEventListener("click", () => {
     currentExpretionCode = result
     currentExpretionDisplay = result
 
-    if(Math.random <= operatorSoundProbability){
+    if(Math.random() <= operatorSoundProbability){
         playRandomSound()
     }
 })
