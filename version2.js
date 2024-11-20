@@ -27,11 +27,38 @@ const digitSoundProbability = 0.1
 const operatorSoundProbability = 0.2
 const specialSoundProbability = 0.3
 
-function appendDigit(digit){
-    currentExpretionCode += digit
-    currentExpretionDisplay += digit
-    updateDisplay()
+function digitPressed(digit){
+
+    if(Math.random() <= digitSoundProbability){
+        playRandomSound()
+    } else{
+        currentExpretionCode += digit
+        currentExpretionDisplay += digit
+        updateDisplay()
+    }
 }
+
+// function operatorPressed(digit){
+
+//     if(Math.random() <= operatorSoundProbability){
+//         playRandomSound()
+//     } else{
+//         currentExpretionCode += digit
+//         currentExpretionDisplay += digit
+//         updateDisplay()
+//     }
+// }
+
+// function specialPressed(digit){
+
+//     if(Math.random() <= specialSoundProbability){
+//         playRandomSound()
+//     } else{
+//         currentExpretionCode += digit
+//         currentExpretionDisplay += digit
+//         updateDisplay()
+//     }
+// }
 
 function updateDisplay(){
     display.value = currentExpretionDisplay
@@ -39,13 +66,13 @@ function updateDisplay(){
 
 
 //sound
-const sound1 = new Audio("nochance1.mp3")
-const sound2 = new Audio("cantletyoudothat1.mp3")
-const sound3 = new Audio("nahbro1.mp3")
-const sound4 = new Audio("nicetry1.mp3")
-const sound5 = new Audio("nocando1.mp3")
-const sound6 = new Audio("sorrybud1.mp3")
-const sound7 = new Audio("uhuh1.mp3")
+const sound1 = new Audio("sounds/nochance1.mp3")
+const sound2 = new Audio("sounds/cantletyoudothat1.mp3")
+const sound3 = new Audio("sounds/nahbro1.mp3")
+const sound4 = new Audio("sounds/nicetry1.mp3")
+const sound5 = new Audio("sounds/nocando1.mp3")
+const sound6 = new Audio("sounds/sorrybud1.mp3")
+const sound7 = new Audio("sounds/uhuh1.mp3")
 const soundFiles = [sound1, sound2, sound3, sound4, sound5, sound6, sound7]
 
 function playRandomSound(){
@@ -56,64 +83,34 @@ function playRandomSound(){
 
 
 one.addEventListener("click", () => {
-    appendDigit("1")
-    if(Math.random() <= digitSoundProbability){
-        playRandomSound()
-    }
+    digitPressed("1")
 })
 two.addEventListener("click", () => {
-    appendDigit("2")
-    if(Math.random() <= digitSoundProbability){
-        playRandomSound()
-    }
+    digitPressed("2")
 })
 three.addEventListener("click", () => {
-    appendDigit("3")
-    if(Math.random() <= digitSoundProbability){
-        playRandomSound()
-    }
+    digitPressed("3")
 })
 four.addEventListener("click", () => {
-    appendDigit("4")
-    if(Math.random() <= digitSoundProbability){
-        playRandomSound()
-    }
+    digitPressed("4")
 })
 five.addEventListener("click", () => {
-    appendDigit("5")
-    if(Math.random() <= digitSoundProbability){
-        playRandomSound()
-    }
+    digitPressed("5")
 })
 six.addEventListener("click", () => {
-    appendDigit("6")
-    if(Math.random() <= digitSoundProbability){
-        playRandomSound()
-    }
+    digitPressed("6")
 })
 seven.addEventListener("click", () => {
-    appendDigit("7")
-    if(Math.random() <= digitSoundProbability){
-        playRandomSound()
-    }
+    digitPressed("7")
 })
 eight.addEventListener("click", () => {
-    appendDigit("8")
-    if(Math.random() <= digitSoundProbability){
-        playRandomSound()
-    }
+    digitPressed("8")
 })
 nine.addEventListener("click", () => {
-    appendDigit("9")
-    if(Math.random() <= digitSoundProbability){
-        playRandomSound()
-    }
+    digitPressed("9")
 })
 zero.addEventListener("click", () => {
-    appendDigit("0")
-    if(Math.random() <= digitSoundProbability){
-        playRandomSound()
-    }
+    digitPressed("0")
 })
 plus.addEventListener("click", () => {
     currentExpretionCode += "+"
